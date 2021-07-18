@@ -1,0 +1,145 @@
+.setupWifi{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+@media only screen and (max-width:390px){
+    .setupWifi .tv-wifi{
+        height: 70vw;
+    }
+    .setupWifi .t2{
+        height: 51vw;
+    }
+}
+
+.setupWifi .card{
+    height: 2.5em;
+    flex-direction: row;
+    width: 90vw;
+    padding: 0.3em;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    border-radius: 5em;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.55)!important;
+    margin: 0.5em 0 0;
+    font-size: 18px !important;
+    color:#707070;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.setupWifi .card img{
+    margin:0.3em 0.3em;
+    transition: transform 1s ease-in-out;
+}
+/* img:focus */
+
+.setupWifi .remote-wifi{
+    height: 32rem;
+    /* position: static; */
+    /* border: 1px solid black; */
+    /* background-color: red; */
+    /* background: rgba(100,100,100,0.5);  */
+    /* transform-style: preserve-3d; */
+    /* transform: rotateX(20deg); */
+}
+
+.setupWifi .icon{
+    width: 2em;
+    height: 2em;
+}
+
+.remote-wifi-box{
+    position: relative;
+    top:-2em;
+    /* height: 300px; */
+    /* bottom:1em; */
+    /* width: 150px; */
+    /* margin-left: 60px; */
+    /* border: 1px solid blue; */
+    /* perspective: 700px; */
+}
+
+.tv-wifi{
+    position: relative;
+    top:0;
+}
+
+.t1{
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.t2{
+    position: absolute;
+    top: 21px;
+    right:8px;
+}
+
+.setupWifi button{
+    /* position: relative; */
+    /* bottom:32vh; */
+    /* right: 10vw; */
+    z-index: 1;
+}
+
+.setupWifi .power-btn{
+    position: relative;
+    top: 2.0em;
+    right: 2.2em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+.setupWifi .settings-btn{
+    position: relative;
+    top: 2em;
+    left: 2.3em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+.setupWifi .wifi-btn{
+    position: relative;
+    top: 4.23em;
+    left: 2.2em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+.setupWifi .ok-btn{
+    position: relative;
+    top: 7.1em;
+    left: 0em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+.setupWifi .down-btn{
+    position: relative;
+    top: 9.3em;
+    left: 0em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+.setupWifi .right-btn{
+    position: relative;
+    top: 7.2em;
+    left: 2.1em;
+    height: 2em;
+    padding:1em;
+    width: 1.5em;
+    background-color: transparent;
+}
+

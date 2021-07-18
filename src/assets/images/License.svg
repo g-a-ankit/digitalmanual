@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="213" height="50" viewBox="0 0 213 50">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 638 479">
+      <image width="638" height="479" xlink:href="Group%2077-image.png"/>
+    </pattern>
+  </defs>
+  <g id="Group_77" data-name="Group 77" transform="translate(-236 -316.094)">
+    <rect id="Image_8" data-name="Image 8" width="62" height="46" transform="translate(236 320.094)" fill="url(#pattern)"/>
+    <text id="License" transform="translate(311 356.094)" font-size="38" font-family="Roboto-Regular, Roboto" letter-spacing="0.03em" opacity="0.71"><tspan x="0" y="0">License</tspan></text>
+  </g>
+</svg>
