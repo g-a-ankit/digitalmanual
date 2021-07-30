@@ -9,11 +9,13 @@ import Home from './components/Home';
 import Info from './components/Guide/guides/ProductInfo/Info';
 import Handset from './components/Guide/guides/ProductInfo/Handset';
 import Request from './components/Guide/guides/ProductInfo/Request';
+import HowTo from './components/Guide/guides/Functional/HowTo';
 import License from './components/Guide/guides/ProductInfo/License';
 import SetupWifi from './components/Guide/guides/Functional/SetupWifi';
 import FuncNav from './components/Guide/guides/Functional/FuncNav';
 import SoftwareUpdates from './components/Guide/guides/Functional/SoftwareUpdates';
 import AddGoogleAccount from './components/Guide/guides/Functional/AddGoogleAccount';
+import DeviceSpec from './components/Guide/guides/ProductInfo/DeviceSpec';
 
 import {AnimatePresence, motion } from 'framer-motion';
 
@@ -47,13 +49,17 @@ function App() {
       <Route exact path = '/func-nav'>
         <FuncNav />
       </Route>
+      <Route exact path='/func-nav/HowTo'>
+        <HowTo />
+      </Route>
       <Route exact path = '/product-info'> 
         <Info />
       </Route>
-      <Route exact path = '/product-info/Handset'>
+      <Route exact path = '/product-info/handset'>
         <Handset />
       </Route>
-      <Route exact path = '/product-info/License' component={License} />
+      <Route exact path = '/product-info/license' component={License} />
+      <Route exact path = '/product-info/device-spec' component={DeviceSpec} />
       <Route exact path = '/req-support' component={Request} />
 
       {links.map(function(link,index){

@@ -67,13 +67,13 @@ const Guide = () => {
         {/* Guide Card */}
 
         <div className="card1">
-            <Card style={{ width: '15.5rem',margin:'1rem',borderRadius:'20px'}}>
-                    <ListGroup variant="flush">
-                <ListGroupItem style={{textAlign:'center',borderRadius:'20px'}}>Guide</ListGroupItem>
+            <Card style={{ width: '15.5rem',margin:'1rem',borderRadius:'20px',border:'none'}}>
+                    {/* <ListGroup variant="flush"> */}
+                <ListGroupItem style={{textAlign:'center'}}>Guide</ListGroupItem>
                         {guides.map(function(guide,index){
                             return (
                                 
-                                <ListGroupItem style={{borderRadius:'20px'}} key={index.toString()}>
+                                <ListGroupItem key={index.toString()}>
                                 <Link exact to={`/${routes[index]}`}>
 
                                     <div className="item">
@@ -84,12 +84,12 @@ const Guide = () => {
                                 </ListGroupItem>
                             );
                         })}
-                    </ListGroup>
+                    {/* </ListGroup> */}
                 </Card>
         </div>
 
         {/* Go back Navigator */}
-        <div style={{}}>
+        {/* <div style={{}}> */}
             <button className="btn-go-back" onClick={handleChange}>
                 {/* <div className="wrap"> */}
                 <div className="back-arrow ml-1">
@@ -99,7 +99,7 @@ const Guide = () => {
                 {/* </div> */}
 
             </button>
-        </div>
+        {/* </div> */}
     </motion.div>
 
     // </Router>

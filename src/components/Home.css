@@ -15,6 +15,7 @@
     bottom: 0;
     right: 0;
     margin: 4em 2em;
+    border: none;
 }
 
 .btn-nav-home i{
@@ -118,7 +119,6 @@
   /* bottom: 4em; */
   /* right: 10%; */
   /* border: 1px solid black; */
-  /* background-color: red; */
   transform: rotateX(35deg);
 }
 

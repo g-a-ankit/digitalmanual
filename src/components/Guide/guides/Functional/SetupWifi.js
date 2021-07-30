@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 import tv from '../../../../assets/images/tv.svg';
@@ -40,9 +40,31 @@ const SetupWifi = () => {
     const btns = ['power-btn','settings-btn','down-btn','ok-btn','down-btn','ok-btn','ok-btn','ok-btn'];
     
     const [index, setindex] = useState(0);
+
+    useEffect(() => {
+        if(index===7){
+       const timeout = setTimeout(() => {
+          setindex(8);
+        }, 1000);
+    
+       return () => clearTimeout(timeout);
+      }
+      },[index]);
+
     const handleChange = () => {
         // if(index!==6)
-        return index<=6?setindex(index+1):setindex(0);
+        return index!==8?setindex(index+1):setindex(0);
+        // else{
+        //     const timer = setTimeout( () => {setindex(index+1)},1000 )
+
+        //     const func = () => {
+        //         setindex(index+1);
+        //         clearTimeout(timer);
+        //     }
+        //     return func();
+        //  }
+
+
         
     };
     const Img = ({index}) => {
@@ -55,6 +77,13 @@ const SetupWifi = () => {
                         exit = "out"
                         variants={pageVariants}
                         transition={pageTransition} />;
+        else if(index===3 || index===5){
+            return <>
+                    <img className='t2' src={images[1]} alt="" />
+                    <img className='t2' src={images[index-1]} alt="" />
+                    <img className='t2' src={images[index]} alt="" />
+            </>
+        }
         if(index>1)
         return <>
                 <img className='t2' src={images[1]} alt="" />
@@ -84,6 +113,16 @@ const SetupWifi = () => {
           x:"30%"
         }
       }
+    const pageVariants1 = {
+        in: {
+          opacity: 1,
+          y:"0%"
+        },
+        out:{
+          opacity: 0,
+          y:"30%"
+        }
+      }
 
       const pageTransition = {
           duration:0.5,
@@ -105,13 +144,17 @@ const SetupWifi = () => {
 
         }
 
-    return (
+
+
+    // index===7 ? 
+    return index!==8 ?
         <motion.div className='setupWifi'
         initial="out"
         animate="in"
         exit = "out"
         variants={pageTransition}>
-            <Button />
+
+<Button />
 
             <div style={{position:'relative',top:'0',left:'0'}} >
                 <img className='tv-wifi' src={images[0]} alt="" />
@@ -129,14 +172,12 @@ const SetupWifi = () => {
             </div>
 
             {index===7
-            ?  <Link to='/func-nav'>
-                <button className={btns[index]} onClick={handleChange}></ button>
-            </Link>
+            ?  
+            // <Link to='/func-nav'>
+                <button className={btns[index]} style={{border:'none'}} ></ button>
+            // </Link>
             :                 <button className={btns[index]} onClick={handleChange}></ button>
                 }
-                {/* <button className='settings-btn'></button> */}
-                {/* <button className='down-btn'></button> */}
-                {/* <button className='ok-btn'></button> */}
 
             <div className="remote-wifi-box">
                 <div>
@@ -144,7 +185,42 @@ const SetupWifi = () => {
                 </div>
             </div>
         </motion.div>
-    )
+    :
+    <motion.div className='setupWifi'
+    initial="out"
+    animate="in"
+    exit = "out"
+    variants={pageVariants}
+    transition={pageTransition}>
+        <Button />
+        <motion.div
+            initial="out"
+            animate="in"
+            exit = "out"
+            variants={pageVariants1}
+            transition={pageTransition}>
+
+        <div className='func-nav-gradient' >
+            <div className='contents' >
+            <div>
+                <span > Wifi set-up completed </span>
+            </div>
+            <div className='func-nav-btns' >
+                <Link to='/func-nav'>
+                <button className='btns'>Home</button>
+                </Link>
+                <motion.button
+                initial="out"
+                animate="in"
+                exit = "out"
+                variants={pageTransition}
+                className='btns' onClick = {handleChange} >Repeat</motion.button>
+            </div>
+            </div>
+        </div>
+    </motion.div>
+    </motion.div>
+
 }
 
 export default SetupWifi;

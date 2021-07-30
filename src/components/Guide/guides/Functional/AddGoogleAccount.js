@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import { Link } from 'react-router-dom';
 import tv from '../../../../assets/images/tv.svg';
@@ -47,7 +47,7 @@ const AddGoogleAccount = () => {
     const [index, setindex] = useState(0);
     const handleChange = () => {
         // if(index!==6)
-        return index<6?setindex(index+1):setindex(0);
+        return index!==7?setindex(index+1):setindex(0);
         
     };
 
@@ -59,6 +59,16 @@ const AddGoogleAccount = () => {
         out:{
           opacity: 0,
           x:"30%"
+        }
+      }
+      const pageVariants1 = {
+        in: {
+          opacity: 1,
+          y:"0%"
+        },
+        out:{
+          opacity: 0,
+          y:"30%"
         }
       }
 
@@ -78,6 +88,13 @@ const AddGoogleAccount = () => {
                     exit = "out"
                     variants={pageVariants}
                     transition={pageTransition} />
+        else if(index===3)
+        return <>
+                <img className='t2' src={images[1]} alt="" />
+                <img className='t2' src={images[index-1]} alt="" />
+                <img className='t2' src={images[index]} alt="" />
+
+        </>
         if(index>1)
         return <>
                 <img className='t2' src={images[1]} alt="" />
@@ -110,7 +127,18 @@ const AddGoogleAccount = () => {
 
     }
 
-    return (
+    useEffect(() => {
+        if(index===6){
+       const timeout = setTimeout(() => {
+          setindex(7);
+        }, 2000);
+    
+       return () => clearTimeout(timeout);
+      }
+      },[index]);
+
+
+    return index!==7 ?
         <motion.div className='setupWifi'
         initial="out"
         animate="in"
@@ -130,9 +158,10 @@ const AddGoogleAccount = () => {
             </div>
 
             {index===6
-            ?  <Link to='/func-nav'>
-                <button className={btns[index]} onClick={handleChange}></ button>
-            </Link>
+            ?  
+            // <Link to='/func-nav'>
+                <button className={btns[index]} style={{border:'none'}} ></ button>
+            // </Link>
             :                 <button className={btns[index]} onClick={handleChange}></ button>
 }
                 {/* <button className='settings-btn'></button> */}
@@ -145,7 +174,40 @@ const AddGoogleAccount = () => {
                 </div>
             </div>
         </motion.div>
-    )
-}
+:
+<motion.div className='setupWifi'
+initial="out"
+animate="in"
+exit = "out"
+variants={pageVariants}
+transition={pageTransition}>
+    <Button />
+                <motion.div
+        initial="out"
+        animate="in"
+        exit = "out"
+        variants={pageVariants1}
+        transition={pageTransition}>
+
+    <div className='func-nav-gradient' >
+        <div className='contents' >
+        <div>
+            <span style={{fontSize:'28px'}} > Google Account Added </span>
+        </div>
+        <div className='func-nav-btns' >
+            <Link to='/func-nav'>
+            <button className='btns'>Home</button>
+            </Link>
+            <motion.button
+            initial="out"
+            animate="in"
+            exit = "out"
+            variants={pageTransition}
+            className='btns' onClick = {handleChange} >Repeat</motion.button>
+        </div>
+        </div>
+    </div>
+            </motion.div>
+</motion.div>}
 
 export default AddGoogleAccount;

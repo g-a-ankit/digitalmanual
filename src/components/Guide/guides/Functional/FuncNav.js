@@ -34,7 +34,7 @@ const FuncNav = () => {
 
     const List = ({index,guide}) => {
         return (
-            <ListGroupItem style={{borderRadius:'20px'}} >
+            <ListGroupItem >
             <Link to ={`func-nav/${links[index]}`}>
             <div className="item">
                 <span style={{fontSize:'18px'}}> {guide} </span>
@@ -46,9 +46,14 @@ const FuncNav = () => {
     }
 
     const L = ({index,guide}) => {
-        // if(links[index]!=='')
+        if(links[index]!=='#')
         return (
        <Link to ={`func-nav/${links[index]}`}>
+           <List index={index} guide={guide} key={index}/>
+       </Link>
+        )
+        return (
+       <Link>
            <List index={index} guide={guide} key={index}/>
        </Link>
         );
@@ -66,23 +71,27 @@ const FuncNav = () => {
         <div className="header">
             <img className="img-func" src={tv} alt="" />
             <img className='img-remote' src={remote} alt="" />
+            <Link to='/func-nav/HowTo'>
+                
             <div className="search card">
-            <span>How to</span>
-            <i className="fas fa-search fa-lg"></i>
+            <span style={{fontWeight:'400'}} >How to</span>
+            <i className="fas fa-search "></i>
             </div>
+            </Link>
         </div>
         {/* Guide Card */}
 
         <div className="card1">
-            <Card style={{ width: '17rem',margin:'3rem',borderRadius:'20px'}}>
-                <ListGroupItem style={{textAlign:'center',textDecoration:'none',borderRadius:'20px'}}> Functional Navigation</ListGroupItem>
-                    <ListGroup variant="flush">
+            <Card style={{ width: '17rem',margin:'3rem',border:'none',borderRadius:'20px'}}>
+                <ListGroupItem className='list-group-item' style={{textAlign:'center',textDecoration:'none'
+}}> Functional Navigation</ListGroupItem>
+                    {/* <ListGroup variant="flush"> */}
                         {guides.map(function(guide,index){
                             return (
-                                <List index={index} guide={guide} />
-                            );
+                                <List index={index} guide={guide} key={index}/>
+                                );
                     })}
-                    </ListGroup>
+                    {/* </ListGroup> */}
                 </Card>
         </div>
 

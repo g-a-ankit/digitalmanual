@@ -31,7 +31,7 @@ const Handset = () => {
         animate="in"
         exit = "out"
         variants={pageTransition}>
-            <table className="mt-2 mr-2 ml-2">
+            <table className="pt-2 pr-2 pl-2">
                 <tbody>
                 <tr>
                     <td className="td-handset" >

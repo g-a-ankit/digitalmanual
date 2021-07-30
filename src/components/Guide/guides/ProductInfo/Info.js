@@ -41,82 +41,31 @@ const Info = () => {
             </div>
             
             <div className="shadow-sm p-3 bg-white">
-            {/* <table>
-            <tbody>
-                <tr className='info'>
-                <td className=""  >
-                    <div>
 
-                    <img className="table-tv" src={tv1} alt="" srcset="" />
-                    <span>TV Unit</span>
-                    </div>
-                </td>
-                <td className="product-td"  >
-                    <Link to='/product-info/handset'>
-                    <div>
-                    <img className="table-remote" src={remote} alt="" srcset="" />
-                    <span style={{color:'black'}}>Handset</span>
-                    </div>
-                    </Link>
-
-                </td>
-                </tr>
-                <tr className='info'>
-                <td className="product-td"  >
-                    <div>
-                    <img className="table-spec" src={spec} alt="" srcset="" />
-                    <span>Device Specification</span>
-                    </div>
-
-                </td>
-                <td className="product-td"  >
-                <Link to='/product-info/license'>
-                    <div>
-                    <img className="table-lic" src={license} alt="" srcset="" />
-                    <span style={{color:'black'}} >License</span>
-                    </div>
-                </Link>
-
-                </td>
-                </tr>
-                <tr className='info'>
-                <td className="product-td"  >
-                    <div>
-
-                    <img className="table-warr" src={eWarranty} alt="" srcset="" />
-                    <span>e-Warranty</span>
-                    </div>
-
-                </td>
-                <td className="product-td"  >
-                    <div>
-                    <img className="table-tv1" src={warning} alt="" srcset="" />
-                    <span>Warnings</span>
-                    </div>
-
-                </td>
-                </tr>
-
-            </tbody>
-            </table>  */}
             <Row>
                 <Col className='product-info'>
                 <Row>
-                <img className="table-tv" src={tv1} alt="" srcset="" />
-                </Row>
-                <Row style={{textAlign:'center'}} >
-                <span>TV Unit</span>
-                </Row>
-                </Col>
-                <Col className='product-info'>
                 <Link to='/product-info/handset'>
-                <Row>
                 <img className="table-remote" src={remote} alt="" srcset="" />
+                </Link>
                 </Row>
                 <Row style={{textAlign:'center'}} >
-                <span style={{color:'black'}}>Handset</span>
-                </Row>
+                <Link to='/product-info/handset'>
+                <span style={{color:'black',textAlign:'center'}}>Handset</span>
                 </Link>
+                </Row>
+                </Col>
+                <Col className='product-info'>
+                <Row>
+                <Link to='/product-info/license'>
+                <img className="table-lic" src={license} alt="" srcset="" />
+                </Link>
+                </Row>
+                <Row style={{textAlign:'center'}} >
+                <Link to='/product-info/license'>
+                <span style={{color:'black'}} >License</span>
+                </Link>
+                </Row>
                 </Col>
                 </Row>
 
@@ -124,24 +73,16 @@ const Info = () => {
 
                 <Col className='product-info'>
                 <Row>
+                <Link to='/product-info/device-spec'>
                 <img className="table-spec" src={spec} alt="" srcset="" />
+                </Link>
                 </Row>
                 <Row style={{textAlign:'center'}} >
                 <span>Device Specification</span>
                 </Row>
                 </Col>
 
-                <Col className='product-info'>
-                <Link to='/product-info/license'>
 
-                <Row>
-                <img className="table-lic" src={license} alt="" srcset="" />
-                </Row>
-                <Row style={{textAlign:'center'}} >
-                <span style={{color:'black'}} >License</span>
-                </Row>
-                </Link>
-                </Col>
             </Row>
             <Row>
 

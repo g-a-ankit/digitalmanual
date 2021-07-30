@@ -95,11 +95,9 @@ a{
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    /* background-color: red !important; */
 }
 
 .setupWifi .card div{
-    /* background-color: red; */
     /* display: inline-block; */
     margin: 6px;
     text-align: center;

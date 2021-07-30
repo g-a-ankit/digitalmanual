@@ -2,7 +2,6 @@
     width: 100%;
     height: 100vh;
     background-color: #f6f6f6;
-    /* background-color: red; */
 }
 
 body{
@@ -72,16 +71,30 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 9rem !important;
+    height: 10rem !important;
+}
+
+.img-2{
+    height: 12rem !important;
+
 }
 
 .remote-guide{
     position: relative;
-    bottom:23% !important;
+    bottom:13% !important;
     left:30%!important;
     width: 8rem !important;
-    /* background-color: red; */
 }
+
+.list-group-item {
+    border: 1px solid rgba(0, 0, 0, 0.055) !important;
+}
+
+}
+
+@media only screen and (max-width: 700px) {
+    
+    
 }
 
 .img {
@@ -95,8 +108,8 @@ body{
 
 .remote-guide{
     position: relative;
-    bottom:33%;
-    left: 40%;
+    bottom:13%;
+    left: 35%;
     width: 12rem ;
     /* background-color: aqua; */
 
@@ -189,7 +202,7 @@ a{
 }
 
   .btn-go-back {
-      
+      border: none;
     color:white;
     background-color: black;
     width: 165px;
@@ -222,9 +235,10 @@ a{
 .wrap{
 
     display: flex;
+    position: relative;
     align-items: center;
     /* top: 50%; */
-    transform: translateY(25%);
+    left: 3%;
     justify-content: center;
 }
 
@@ -318,17 +332,26 @@ div.shadow-sm{
 }
 
 .btn-nav-left{
+    border:none;
     background-color: black;
     color:white;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 8%;
     left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     outline:none;
     /* margin: 3rem; */
     -webkit-text-stroke: 0.2px white;
+}
+
+.btn-nav-left i {
+    position: relative;
+    right:5%;
 }
 
 .btn-back{
@@ -373,6 +396,7 @@ div.shadow-sm{
 
 .handset button{
     top:-0.5rem;
+    border:none;
 }
 
 
@@ -409,7 +433,6 @@ div.shadow-sm{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    /* border: 2px solid red; */
 
 }
 
@@ -537,4 +560,176 @@ div.shadow-sm{
 .go-back-func{
     position: relative;
     bottom:100%;
+}
+
+.card-how-to .card{
+    height:50px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px !important;
+    /* flex-direction: column; */
+}
+
+.card-how-to form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-how-to input{
+    margin-left:0.5rem;
+    outline: none;
+    height: 48px;
+    border:none;
+    border-radius: 20px;
+    width: 80%;
+    /* background-color: rebeccapurple; */
+}
+
+.card-how-to button{
+    margin:0 0.5rem;
+    border:none;
+    background-color: white !important;
+}
+
+.suggestions div {
+    background-color: black;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: 400;
+    border-radius: 10px; 
+    margin: 3px;
+}
+
+.suggestions .times {
+    /* -webkit-text-stroke: 0.01px white; */
+    /* font-weight: 600; */
+    /* width: 20px; */
+    /* height: 20px; */
+    align-self: center;
+    justify-self: center;
+}
+
+.suggestions{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-bottom{
+    /* position: absolute !important; */
+    top: 10vh;
+    /* bottom: 10px; */
+}
+
+.search {
+    color: black;
+}
+
+.func-nav-btns{
+    display: flex;
+    flex-direction: column;
+    height:150px;
+    /* border: 2px solid black; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.func-nav-gradient { 
+    height: 100vh;
+    border-radius: 50%;
+    width: 100vh;
+    position: relative;
+    /* z-index: -1; */
+    bottom: 35%;
+    background-image: linear-gradient(0deg, #374650 0%, #6E8CA0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.btns{
+    background-color: black;
+    outline: none;
+    color: white;
+    width: 178px;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+}
+
+.contents{
+    position: absolute;
+    top: 45%;
+    display: flex;
+    align-content: flex-start;
+    height: 50vh;
+    flex-direction: column;
+    color: white;
+        justify-content: space-around;
+    /* align-items: flex-start; */
+}
+
+.contents div {
+    font-family: 'Roboto', sans-serif;
+}
+
+.contents div span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 31px;
+}
+
+@media only screen and (max-height: 600px) {
+    *{
+        overflow: visible !important;
+    }
+}
+
+.device-spec {
+    padding: 1rem;
+}
+
+.device-spec .main{
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 450px){
+.device-spec .main img{
+    width: 100%;
+}
+}
+
+.device-spec .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.device-spec .title img{
+   height: 45px;
+}
+
+.device-spec span{
+    font-family: 'Roboto';
+}
+
+@media only screen and (max-height:700px){
+    .device-spec button {
+        position: relative;
+        top: 17% !important;
+    }
 }
